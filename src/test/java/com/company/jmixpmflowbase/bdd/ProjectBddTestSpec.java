@@ -17,7 +17,6 @@ public class ProjectBddTestSpec {
 
     @Step("Open application in the browser")
     public void openApplicationUrl() {
-        sleep(3000);
         open("/");
     }
 
@@ -83,5 +82,26 @@ public class ProjectBddTestSpec {
         saveButton.shouldBe(visible, enabled);
         sleep(1000);
         saveButton.click();
+    }
+
+    @Step("Make sure the new project with <passedName> name is added to project table")
+    public void checkProjectPresence(String passedName) {
+        sleep(1000);
+        SelenideElement createdProjectField = $(By.xpath(X_PATH_START + passedName + X_PATH_END));
+        createdProjectField.shouldBe(visible);
+        createdProjectField.click();
+    }
+
+    @Step("Remove test project")
+    public void removeProject() {
+        sleep(1000);
+        SelenideElement removeButton = $(By.id("removeBtn"));
+        removeButton.shouldBe(visible, enabled);
+        removeButton.click();
+
+        sleep(1000);
+        SelenideElement okButton = $(By.xpath("//vaadin-button[contains(.,'Yes')]"));
+        okButton.shouldBe(visible, enabled);
+        okButton.click();
     }
 }

@@ -48,7 +48,7 @@ dependencies {
     testRuntimeOnly 'org.postgresql:postgresql:42.2.19'
 
     testImplementation group: 'com.codeborne', name: 'selenide', version: '7.2.0'
-    testImplementation 'com.thoughtworks.gauge:gauge-java:0.7.15'
+    testImplementation 'com.thoughtworks.gauge:gauge-java:0.10.3'
 
     implementation 'io.jmix.rest:jmix-rest-starter'
     implementation 'io.jmix.authserver:jmix-authserver-starter'

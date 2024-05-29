@@ -13,3 +13,5 @@ Project creation BDD test
 * Open the project editor to create new instance
 * Fill form fields with following values: name is "BDD test project", manager is "admin"
 * Save new project
+* Make sure the new project with "BDD test project" name is added to project table
+* Remove test project
